@@ -1,0 +1,29 @@
+{
+  "properties": [
+    {
+      "name": "weChat.accessToken.appsecret",
+      "type": "java.lang.String",
+      "description": "Description for weChat.accessToken.appsecret."
+    },
+    {
+      "name": "weChat.accessToken.appid",
+      "type": "java.lang.String",
+      "description": "Description for weChat.accessToken.appid."
+    },
+    {
+      "name": "weChat.auth.redirect_uri",
+      "type": "java.lang.String",
+      "description": "Description for weChat.auth.redirect_uri."
+    },
+    {
+      "name": "weChat.auth.oauthUrl",
+      "type": "java.lang.String",
+      "description": "Description for weChat.auth.oauthUrl."
+    },
+    {
+      "name": "weChat.auth.userInfoUrl",
+      "type": "java.lang.String",
+      "description": "Description for weChat.auth.userInfoUrl."
+    }
+  ]
+}
