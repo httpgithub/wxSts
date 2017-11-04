@@ -1,0 +1,90 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>采购申请预览</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+
+    <link rel="stylesheet" href="../lib/weui.min.css"
+          th:href="@{http://cdn.bootcss.com/weui/1.1.1/style/weui.min.css}"/>
+    <link rel="stylesheet" href="../css/jquery-weui.css"
+          th:href="@{//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css}"/>
+    <link rel="stylesheet" href="css/demos.css" th:href="@{static/css/sts/sts.css}"/>
+
+</head>
+
+<body>
+
+
+<header class='demos-header'>
+    <h1 class="demos-title">Preview</h1>
+</header>
+
+<div class="weui-form-preview">
+    <div class="weui-form-preview__hd">
+        <label class="weui-form-preview__label">采购申请号</label>
+        <em class="weui-form-preview__value">XXXXXXXXXX</em>
+    </div>
+    <div class="weui-form-preview__bd">
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">申请状态</label>
+            <span class="weui-form-preview__value">XXXX</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">供应商名称</label>
+            <span class="weui-form-preview__value">XXXXXXX</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">含税货款金额</label>
+            <span class="weui-form-preview__value">XXXXXXXX</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">税额</label>
+            <span class="weui-form-preview__value">XXXXXXXX</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">运杂费</label>
+            <span class="weui-form-preview__value">总金额</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">总重量</label>
+            <span class="weui-form-preview__value">合同性质</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label">合同性质</label>
+            <span class="weui-form-preview__value">XXXXXXXX</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label"> 供应商合同号</label>
+            <span class="weui-form-preview__value">XXXXXXXX</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label"> 签约日期</label>
+            <span class="weui-form-preview__value">XXXXXXXX</span>
+        </div>
+        <div class="weui-form-preview__item">
+            <label class="weui-form-preview__label"> 供应商合同号</label>
+            <span class="weui-form-preview__value">XXXXXXXX</span>
+        </div>
+    </div>
+    <div class="weui-form-preview__ft">
+        <a class="weui-form-preview__btn weui-form-preview__btn_default" href="javascript:">辅助操作</a>
+        <button type="submit" class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作
+        </button>
+    </div>
+</div>
+
+<script src="../lib/jquery-2.1.4.js" th:src="@{//cdn.bootcss.com/jquery/1.11.0/jquery.min.js}"></script>
+<script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"
+        th:src="@{//cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js}"></script>
+<script src="../lib/fastclick.js" th:src="@{http://jqweui.com/dist/lib/fastclick.js}"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+    });
+</script>
+
+</body>
+</html>

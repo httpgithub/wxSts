@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.ws.st.sts.baosight.com" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.ws.st.sts.baosight.com" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns2="http://domain.service.ws.st.sts.baosight.com" xmlns:ns1="http://domain.ws.st.sts.baosight.com" xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding">
+  <wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://domain.ws.st.sts.baosight.com">
+<xsd:complexType name="MbPayApplyQueryModel">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="mnemonicCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="purContractId" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="segNo" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfMbPayApplyModel">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="MbPayApplyModel" nillable="true" type="ns1:MbPayApplyModel"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MbPayApplyModel">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="applyDate" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="applyPers" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="mbPayApplyDetailModel" nillable="true" type="ns1:ArrayOfMbPayApplyDetailModel"/>
+<xsd:element minOccurs="0" name="payApplyId" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="payApplyStatus" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="providerName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="totalApplyAmount" nillable="true" type="xsd:double"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfMbPayApplyDetailModel">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="MbPayApplyDetailModel" nillable="true" type="ns1:MbPayApplyDetailModel"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MbPayApplyDetailModel">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="applyAmount" nillable="true" type="xsd:double"/>
+<xsd:element minOccurs="0" name="purContractId" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MbPayApplyResultModel">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="payApplyId" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="payApplyResult" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="segNo" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MbApplyResultModel">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="applyDate" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="applyResult" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="procError" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MbDailyQueryModel">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="endDate" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="segNo" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="startDate" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfMbPurDailyModel">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="MbPurDailyModel" nillable="true" type="ns1:MbPurDailyModel"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MbPurDailyModel">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="productTypeName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="providerName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="purAmountAt" nillable="true" type="xsd:double"/>
+<xsd:element minOccurs="0" name="shopsign" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="spec" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="weightQty" nillable="true" type="xsd:double"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfMbSaleDailyModel">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="MbSaleDailyModel" nillable="true" type="ns1:MbSaleDailyModel"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MbSaleDailyModel">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="customerName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="productTypeName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="saleAmountAt" nillable="true" type="xsd:double"/>
+<xsd:element minOccurs="0" name="shopsign" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="spec" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="weightQty" nillable="true" type="xsd:double"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MbCanSaleGoodsQueryModel">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="mnemonicCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="segNo" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfMbCanSaleGoodsModel">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="MbCanSaleGoodsModel" nillable="true" type="ns1:MbCanSaleGoodsModel"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MbCanSaleGoodsModel">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="canSaleQty" nillable="true" type="xsd:double"/>
+<xsd:element minOccurs="0" name="productTypeName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="shopsign" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="spec" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="totQty" nillable="true" type="xsd:double"/>
+<xsd:element minOccurs="0" name="wproviderName" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://service.ws.st.sts.baosight.com">
+<xsd:element name="queryPayApplyInfo">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns1:MbPayApplyQueryModel"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="queryPayApplyInfoResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:ArrayOfMbPayApplyModel"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="payApplyResultInfo">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns1:MbPayApplyResultModel"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="payApplyResultInfoResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:MbApplyResultModel"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="querySTRP0304">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns2:PageSearchDto"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="querySTRP0304Response">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns2:PageResultDto"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="queryPurDailyInfo">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns1:MbDailyQueryModel"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="queryPurDailyInfoResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:ArrayOfMbPurDailyModel"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="querySaleDailyInfo">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns1:MbDailyQueryModel"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="querySaleDailyInfoResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:ArrayOfMbSaleDailyModel"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="queryCanSaleGoodsInfo">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns1:MbCanSaleGoodsQueryModel"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="queryCanSaleGoodsInfoResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:ArrayOfMbCanSaleGoodsModel"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="login">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="loginResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://domain.service.ws.st.sts.baosight.com">
+<xsd:complexType name="PageSearchDto">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="currentPageNum" type="xsd:int"/>
+<xsd:element minOccurs="0" name="page" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="pageSize" type="xsd:int"/>
+<xsd:element minOccurs="0" name="queryParam" nillable="true" type="xsd:anyType"/>
+<xsd:element minOccurs="0" name="segNo" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="sort" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="total" type="xsd:int"/>
+<xsd:element minOccurs="0" name="userClientIp" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userId" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userName" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="PageResultDto">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="currentPageNum" type="xsd:int"/>
+<xsd:element minOccurs="0" name="page" type="xsd:int"/>
+<xsd:element minOccurs="0" name="t" nillable="true" type="xsd:anyType"/>
+<xsd:element minOccurs="0" name="total" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="payApplyResultInfoRequest">
+    <wsdl:part name="parameters" element="tns:payApplyResultInfo"/>
+  </wsdl:message>
+  <wsdl:message name="querySTRP0304Request">
+    <wsdl:part name="parameters" element="tns:querySTRP0304"/>
+  </wsdl:message>
+  <wsdl:message name="queryPayApplyInfoResponse">
+    <wsdl:part name="parameters" element="tns:queryPayApplyInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="queryPayApplyInfoRequest">
+    <wsdl:part name="parameters" element="tns:queryPayApplyInfo"/>
+  </wsdl:message>
+  <wsdl:message name="querySTRP0304Response">
+    <wsdl:part name="parameters" element="tns:querySTRP0304Response"/>
+  </wsdl:message>
+  <wsdl:message name="queryPurDailyInfoRequest">
+    <wsdl:part name="parameters" element="tns:queryPurDailyInfo"/>
+  </wsdl:message>
+  <wsdl:message name="queryCanSaleGoodsInfoResponse">
+    <wsdl:part name="parameters" element="tns:queryCanSaleGoodsInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="loginRequest">
+    <wsdl:part name="parameters" element="tns:login"/>
+  </wsdl:message>
+  <wsdl:message name="loginResponse">
+    <wsdl:part name="parameters" element="tns:loginResponse"/>
+  </wsdl:message>
+  <wsdl:message name="querySaleDailyInfoRequest">
+    <wsdl:part name="parameters" element="tns:querySaleDailyInfo"/>
+  </wsdl:message>
+  <wsdl:message name="payApplyResultInfoResponse">
+    <wsdl:part name="parameters" element="tns:payApplyResultInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="queryCanSaleGoodsInfoRequest">
+    <wsdl:part name="parameters" element="tns:queryCanSaleGoodsInfo"/>
+  </wsdl:message>
+  <wsdl:message name="querySaleDailyInfoResponse">
+    <wsdl:part name="parameters" element="tns:querySaleDailyInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="queryPurDailyInfoResponse">
+    <wsdl:part name="parameters" element="tns:queryPurDailyInfoResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="MobileServicePortType">
+    <wsdl:operation name="queryPayApplyInfo">
+      <wsdl:input name="queryPayApplyInfoRequest" message="tns:queryPayApplyInfoRequest"/>
+      <wsdl:output name="queryPayApplyInfoResponse" message="tns:queryPayApplyInfoResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="payApplyResultInfo">
+      <wsdl:input name="payApplyResultInfoRequest" message="tns:payApplyResultInfoRequest"/>
+      <wsdl:output name="payApplyResultInfoResponse" message="tns:payApplyResultInfoResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="querySTRP0304">
+      <wsdl:input name="querySTRP0304Request" message="tns:querySTRP0304Request"/>
+      <wsdl:output name="querySTRP0304Response" message="tns:querySTRP0304Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="queryPurDailyInfo">
+      <wsdl:input name="queryPurDailyInfoRequest" message="tns:queryPurDailyInfoRequest"/>
+      <wsdl:output name="queryPurDailyInfoResponse" message="tns:queryPurDailyInfoResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="querySaleDailyInfo">
+      <wsdl:input name="querySaleDailyInfoRequest" message="tns:querySaleDailyInfoRequest"/>
+      <wsdl:output name="querySaleDailyInfoResponse" message="tns:querySaleDailyInfoResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="queryCanSaleGoodsInfo">
+      <wsdl:input name="queryCanSaleGoodsInfoRequest" message="tns:queryCanSaleGoodsInfoRequest"/>
+      <wsdl:output name="queryCanSaleGoodsInfoResponse" message="tns:queryCanSaleGoodsInfoResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input name="loginRequest" message="tns:loginRequest"/>
+      <wsdl:output name="loginResponse" message="tns:loginResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MobileServiceHttpBinding" type="tns:MobileServicePortType">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="queryPayApplyInfo">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="queryPayApplyInfoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="queryPayApplyInfoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="payApplyResultInfo">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="payApplyResultInfoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="payApplyResultInfoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="querySTRP0304">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="querySTRP0304Request">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="querySTRP0304Response">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryPurDailyInfo">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="queryPurDailyInfoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="queryPurDailyInfoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="querySaleDailyInfo">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="querySaleDailyInfoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="querySaleDailyInfoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryCanSaleGoodsInfo">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="queryCanSaleGoodsInfoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="queryCanSaleGoodsInfoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="loginRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="loginResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MobileService">
+    <wsdl:port name="MobileServiceHttpPort" binding="tns:MobileServiceHttpBinding">
+      <wsdlsoap:address location="http://jmtest.imwork.net:91/ws/MobileService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

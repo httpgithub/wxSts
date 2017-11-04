@@ -2,22 +2,26 @@ package com.baosight.controller;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.URISyntaxException;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.baosight.util.HttpUtil;
 import com.baosight.wechat.WeChatUtil;
+import com.baosight.wechat.message.IWeChatMessageResponse;
+import com.baosight.wechat.message.model.BaseMessage;
+import com.baosight.wechat.message.model.MessageUtil;
 import com.baosight.wechat.model.UserAccessTokenModel;
 import com.baosight.wechat.model.WechaUserInfoModel;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -35,6 +39,9 @@ public class WechatController {
 	@Autowired
 	private WeChatUtil weChatUtil;
 
+	@Autowired
+	private IWeChatMessageResponse iWeChatMessageResponse;
+
 	/**
 	 * https://gist.github.com/binjoo/5466968
 	 * http://www.jianshu.com/p/56d8906ace28
@@ -44,16 +51,47 @@ public class WechatController {
 	 */
 	@RequestMapping("/authToken")
 	public void authToken(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		// 微信加密签名
-		String signature = request.getParameter("signature");
-		// 随机字符串
-		String echostr = request.getParameter("echostr");
-		// 时间戳
-		String timestamp = request.getParameter("timestamp");
-		// 随机数
-		String nonce = request.getParameter("nonce");
+		BufferedReader br = request.getReader();
+		if (Objects.nonNull(br)) {
+			String xml = br.lines().collect(Collectors.joining());
+			if (StringUtils.isNotEmpty(xml)) {
+				if (log.isInfoEnabled()) {
+					log.info("微信接口请求报文:{}", xml);
+				}
+				//https://quanke.gitbooks.io/design-pattern-java/%E5%B7%A5%E5%8E%82%E4%B8%89%E5%85%84%E5%BC%9F%E4%B9%8B%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%B8%80%EF%BC%89.html
+				BaseMessage baseMessage = MessageUtil.weChatXml2Bean(xml, BaseMessage.class);
+				String responseXml = MessageUtil.bean2WeChatXml(iWeChatMessageResponse.responseWeChatMessage(baseMessage));
+				if (log.isInfoEnabled()) {
+					log.info("微信接口返回报文:{}", responseXml);
+				}
+				response.getWriter().print(responseXml);
+			}
+			else {
+				// 微信加密签名
+				String signature = request.getParameter("signature");
+				// 随机字符串
+				String echostr = request.getParameter("echostr");
+				// 时间戳
+				String timestamp = request.getParameter("timestamp");
+				// 随机数
+				String nonce = request.getParameter("nonce");
 
-		response.getWriter().print(echostr);
+				response.getWriter().print(echostr);
+			}
+		}
+		else {
+			// 微信加密签名
+			String signature = request.getParameter("signature");
+			// 随机字符串
+			String echostr = request.getParameter("echostr");
+			// 时间戳
+			String timestamp = request.getParameter("timestamp");
+			// 随机数
+			String nonce = request.getParameter("nonce");
+
+			response.getWriter().print(echostr);
+		}
+
 	}
 
 	@RequestMapping("/authorize")

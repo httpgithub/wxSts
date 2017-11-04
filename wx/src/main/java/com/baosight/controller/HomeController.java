@@ -20,4 +20,10 @@ public class HomeController {
 	public String toLoginPage() {
 		return "pages/login";
 	}
+
+	@RequestMapping(value = {"/about"})
+	public String toAboutPage() {
+		return "pages/about";
+	}
+
 }

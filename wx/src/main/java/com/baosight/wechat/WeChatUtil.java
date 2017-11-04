@@ -52,7 +52,7 @@ public class WeChatUtil {
 
 
 	public String getWeChatAccessToken() throws IOException, URISyntaxException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-		if (true) {
+		if (false) {
 			return "Ze-LdRDiMKW1Rqgy_-1tZcYYhkstZIzS7noYSsXkLzGiLYAvVnlTpsb3ZAtUf7UrvtXStGWYyfmC_D1ehavVkLFuDGkWfuRcFiM7apntKzyHHm_0B__4BVo9Xn6JA-fNXVJaAHACAO";
 		}
 		else {

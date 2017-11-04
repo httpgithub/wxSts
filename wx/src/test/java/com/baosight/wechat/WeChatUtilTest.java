@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -17,7 +18,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  * <p/>Date:2017/10/26 13:57  
  * <p/>Copyright (c) 2017, All Rights Reserved.
  */
-@RunWith(SpringRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class WeChatUtilTest {
 	@Autowired
@@ -44,12 +45,12 @@ public class WeChatUtilTest {
 				"                {\n" +
 				"                    \"type\": \"view\",\n" +
 				"                    \"name\": \"登陆\",\n" +
-				"                    \"url\": \"http://b32830b1.ngrok.io/authorize/\"\n" +
+				"                    \"url\": \"http://78a68795.ngrok.io/authorize/\"\n" +
 				"                },\n" +
 				"                {\n" +
-				"                    \"type\": \"click\",\n" +
-				"                    \"name\": \"赞一下我们\",\n" +
-				"                    \"key\": \"V1001_GOOD\"\n" +
+				"                    \"type\": \"view\",\n" +
+				"                    \"name\": \"主页\",\n" +
+				"                    \"url\": \"http://78a68795.ngrok.io/\"\n" +
 				"                }\n" +
 				"            ]\n" +
 				"        }\n" +

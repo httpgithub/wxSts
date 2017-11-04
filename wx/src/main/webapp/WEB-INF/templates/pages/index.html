@@ -1,16 +1,116 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Thymeleaf 3 + Spring 4 example</title>
-    <meta charset="utf-8" />
+    <title>首页</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <link rel="stylesheet" href="../lib/weui.min.css"
+          th:href="@{http://cdn.bootcss.com/weui/1.1.1/style/weui.min.css}"/>
+    <link rel="stylesheet" href="../css/jquery-weui.css"
+          th:href="@{//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css}"/>
+    <link rel="stylesheet" href="css/demos.css" th:href="@{static/css/sts/sts.css}"/>
+
 </head>
+
 <body>
-<h1>Thymeleaf 3 + Spring 4 example</h1>
-<p>
-    Hello <span th:text="${recipient}">Peter</span>!!!
-</p>
+
+<header class='demos-header'>
+    <h1 class="demos-title">jQuery WeUI</h1>
+    <p class='demos-sub-title'>轻量强大的UI库，不仅仅是 WeUI</p>
+</header>
+
+<div class="weui-grids">
+    <a href="/toPurchaseApplyPage" th:href="@{/toPurchaseApplyPage}" class="weui-grid js_grid">
+        <div class="weui-grid__icon">
+            <svg t="1509534443983" class="icon" style="" viewBox="0 0 1028 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1445" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28">
+                <defs><style type="text/css"></style></defs>
+                <path d="M507.679 76.506c-245.407 0-444.347 197.628-444.347 441.415 0 243.787 198.94 441.415 444.347 441.415 245.405 0 444.345-197.628 444.345-441.415 0-243.787-198.94-441.415-444.345-441.415zM507.252 942.848c-234.325 0-424.283-189.958-424.283-424.282 0-234.324 189.957-424.282 424.283-424.282 234.322 0 424.281 189.957 424.281 424.282 0 234.323-189.958 424.282-424.281 424.282z" p-id="1446"></path>
+                <path d="M520.689 510.468v10.735c78.712 94.857 178.014 160.15 297.907 195.92 5.367 3.607 8.051 7.171 8.051 10.736 0 1.803-3.608 2.684-10.736 2.684-23.273 3.607-51.915 6.29-85.883 8.051-32.206 0-50.992-1.762-56.361-5.367-37.574-26.838-88.567-84.96-152.979-174.45 0 112.721-1.803 185.185-5.367 217.39-3.607 33.967-9.854 49.19-18.786 45.625-14.342-3.607-22.395-24.154-24.155-61.728 0-5.367 0-8.932 0-10.735 3.564 1.803 8.050-60.806 13.419-187.868-60.847 93.053-137.798 156.586-230.811 190.553-34.010 8.933-40.258 8.051-18.787-2.683 101.987-64.412 179.817-142.243 233.494-233.494-53.677 5.367-99.302 13.42-136.877 24.155-12.538 3.608-20.59 4.487-24.154 2.683-21.471 0-39.377-4.446-53.677-13.419-8.974-7.129-2.684-11.617 18.787-13.42 23.232 0 93.935-8.051 212.024-24.154-1.803-14.3-6.291-28.599-13.419-42.941-5.367-7.129-5.367-13.419 0-18.787 17.864-7.129 34.89-1.762 50.993 16.103 1.761 8.974 1.761 16.102 0 21.471-3.607 5.366-4.488 11.658-2.684 18.787 21.472-1.762 49.19-6.249 83.2-13.42 41.138-8.932 67.097-11.616 77.83-8.051 30.403 8.974 49.191 21.471 56.362 37.574 1.761 16.102-10.736 21.471-37.575 16.102-12.537-1.762-51.915-3.564-118.089-5.367-19.709 0-40.258-0.879-61.729-2.683zM397.231 395.063c14.3 26.838 9.813 43.864-13.419 50.993-8.974 0-22.394-12.497-40.258-37.574-7.171-10.735-12.538-19.667-16.102-26.838-1.803-16.103 21.471-11.617 69.779 13.419zM542.159 209.877c21.471 7.171 37.574 13.419 48.31 18.787 17.864 14.341 10.735 26.838-21.472 37.574-14.341 5.367-25.077 9.854-32.206 13.419-41.18 19.709-79.635 34.010-115.404 42.941-48.31 12.538-67.097 13.42-56.361 2.684 42.941-14.3 84.96-33.968 126.141-59.045 17.865-10.735 29.523-25.035 34.89-42.941 3.564-8.933 8.932-13.419 16.102-13.419zM515.321 360.173c5.367 26.838-0.922 41.18-18.786 42.941-8.975 1.803-25.078-16.984-48.31-56.361 5.367-10.737 27.718-6.249 67.096 13.419zM652.197 298.444c12.496 8.974 24.154 18.787 34.889 29.523h2.684c7.128 12.538-1.803 24.154-26.839 34.89-7.171 1.803-11.658 2.683-13.419 2.683-73.386 39.377-101.986 50.112-85.883 32.206 16.103-10.736 35.77-34.89 59.045-72.464 1.762-1.762 3.564-3.564 5.367-5.366v-2.684c7.13-16.102 15.181-22.352 24.155-18.787z" p-id="1447">
+                </path>
+            </svg>
+        </div>
+        <p class="weui-grid__label">
+            采购申请审批
+        </p>
+    </a>
+    <a href="cell.html" class="weui-grid js_grid">
+        <div class="weui-grid__icon">
+            <svg t="1509536311851" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3369" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28"><defs><style type="text/css"></style></defs><path d="M422.398976 601.6V493.323264C343.287808 458.7008 287.998976 379.66848 287.998976 288c0-123.711488 100.540416-224 224-224 123.711488 0 224 100.544512 224 224 0 91.813888-55.378944 170.725376-134.4 205.313024v108.286976h201.472c61.925376 0 112.128 49.716224 112.128 112.003072v111.996928h-806.397952v-112.002048c0-61.85472 50.444288-111.997952 112.125952-111.997952h201.472z m-268.797952 268.8h716.792832v89.6h-716.792832v-89.6z" fill="" p-id="3370"></path></svg>
+        </div>
+        <p class="weui-grid__label">
+            List
+        </p>
+    </a>
+    <a href="form.html" class="weui-grid js_grid">
+        <div class="weui-grid__icon">
+            <img src="images/icon_nav_cell.png" alt=""/>
+        </div>
+        <p class="weui-grid__label">
+            Form
+        </p>
+    </a>
+    <a href="flex.html" class="weui-grid js_grid">
+        <div class="weui-grid__icon">
+            <img src="images/icon_nav_cell.png" alt=""/>
+        </div>
+        <p class="weui-grid__label">
+            Flex
+        </p>
+    </a>
+    <a href="toast.html" class="weui-grid js_grid">
+        <div class="weui-grid__icon">
+            <img src="images/icon_nav_toast.png" alt=""/>
+        </div>
+        <p class="weui-grid__label">
+            Toast
+        </p>
+    </a>
+    <a href="dialog.html" class="weui-grid js_grid">
+        <div class="weui-grid__icon">
+            <img src="images/icon_nav_dialog.png" alt=""/>
+        </div>
+        <p class="weui-grid__label">
+            Dialog
+        </p>
+    </a>
+
+
+</div>
+
+
+<div class="weui-footer">
+    <p class="weui-footer__links">
+        <a href="http://jqweui.com" class="weui-footer__link">jQuery-WeUI 首页</a>
+    </p>
+    <p class="weui-footer__text">Copyright © 2016 jqweui.io</p>
+</div>
+
+<style>
+    .weui-footer {
+        margin: 25px 0 10px 0;
+    }
+</style>
+
+
+<script src="../lib/jquery-2.1.4.js" th:src="@{//cdn.bootcss.com/jquery/1.11.0/jquery.min.js}"></script>
+<script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"
+        th:src="@{//cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js}"></script>
+<script src="../lib/fastclick.js" th:src="@{http://jqweui.com/dist/lib/fastclick.js}"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+    });
+</script>
+
+<svg xmlns="http://www.w3.org/2000/svg" class="icons">
+    <symbol id="arrow-right" viewBox="0 0 1792 1792">
+        <path d="M1600 960q0 54-37 91l-651 651q-39 37-91 37-51 0-90-37l-75-75q-38-38-38-91t38-91l293-293H245q-52 0-84.5-37.5T128 1024V896q0-53 32.5-90.5T245 768h704L656 474q-38-36-38-90t38-90l75-75q38-38 90-38 53 0 91 38l651 651q37 35 37 90z"/>
+    </symbol>
+
+</svg>
+
 </body>
-<script type="text/javascript"
-        th:src="@{/static/js/kendo/js/kendo.all.min.js}" ></script>
 
 </html>
